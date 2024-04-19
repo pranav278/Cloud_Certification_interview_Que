@@ -89,3 +89,121 @@ Choose the new instance type from the list and click "Apply."
 
 6.Verify Changes
 
+**6) What is the diffrence between vertical and horizontal scaling?**
+
+**ANS:** 
+In Amazon Web Services (AWS), the difference between vertical scaling (also known as scaling up) and horizontal scaling (also known as scaling out)
+
+**Vertical Scaling (Scaling Up):**
+
+Definition: Vertical scaling involves increasing the capacity or power of an individual resource (such as an EC2 instance) in your system by adding more CPU, memory, or storage to the existing resource.
+
+**Horizontal Scaling (Scaling Out):**
+
+Definition: Horizontal scaling involves increasing the capacity or performance of your system by adding more instances (servers) to distribute the workload across multiple resources.
+
+**7) When instance are launched in the cluster placement group, what are the network performance parameters that can be expected?**
+
+**ANS:** 
+When instances are launched in an AWS Cluster Placement Group, you can expect enhanced network performance compared to instances launched outside of a placement group.
+
+The network performance parameters that can be expected in a placement group include:
+
+1. Low Latency:
+
+
+Instances within a placement group benefit from lower network latency. This is because they are physically located close to each other within the same data center or Availability Zone.
+
+2. High Network Throughput:
+
+Instances in a placement group can achieve higher network throughput compared to instances outside of a placement group.
+
+3.Consistent Network Performance:
+
+Instances in a placement group typically experience more predictable and consistent network performance due to the reduced variability in network latency and throughput.
+
+4.Enhanced Inter-Instance Communication:
+
+Placement groups facilitate optimized and efficient communication between instances within the group.
+
+5.Cluster-Level Network Features:
+
+AWS may provide additional networking features or optimizations specific to placement groups to further enhance network performance.
+
+**8) What is Amazon virtual Private cloud(VPC)?**
+
+**ANS:** Amazon Virtual Private Cloud (VPC) is a service provided by Amazon Web Services (AWS) that enables you to launch AWS resources in a logically isolated virtual network defined by you. It allows you to have complete control over your virtual networking environment, including IP address ranges, subnets, routing tables, and network gateways. 
+
+**9) What are the states available in processor state control?**
+
+**ANS:** 1.Running State: This is the default state of an EC2 instance where it is fully operational, running the configured operating system and applications.
+
+2.Stopped State: An EC2 instance can be stopped, which halts its execution and releases the underlying resources (CPU, memory, etc.). The state of the instance is preserved, and it can be started again later.
+
+3.Terminated State: When an EC2 instance is terminated, it is permanently deleted and cannot be restarted. The associated resources are released, including the processor resources.
+
+4.Paused State (Hibernate for some instance types): Certain instance types in AWS support hibernation, where the state of the instance (including processor state) is saved to Amazon EBS (Elastic Block Store), allowing the instance to be quickly resumed from the saved state.
+
+5.Instance Reboot: You can initiate a reboot of an EC2 instance, which temporarily stops the instance and then starts it again, maintaining its state and configuration.
+
+6.Auto Scaling State: EC2 instances can be managed in an Auto Scaling group, where AWS automatically adjusts the number of instances based on demand. This involves launching new instances (running state) or terminating instances (stopped or terminated state) based on scaling policies.
+
+7.Instance Type Modification: AWS allows you to modify the instance type of a running EC2 instance, which involves changing the underlying CPU and memory configuration without terminating the instance.
+
+8.Elastic Network Interface (ENI) Attachment/Detachment: Managing the attachment and detachment of network interfaces to/from EC2 instances, which can affect connectivity and network-related operations.
+
+**10) How to transfer an existing domain name registration to Amazon Route 53 without disrupting existing web traffic?**
+
+**ANS:** **Pre-Transfer Preparation:**
+
+ 1.Check Domain Eligibility: Ensure that the domain name you want to transfer is eligible for transfer (i.e., it's not within the 60-day transfer lock period after registration or a recent transfer).
+
+2.Prepare AWS Account: Make sure you have an AWS account set up with access to Route 53 and sufficient permissions to manage DNS settings.
+
+3.Document Current DNS Settings: Take note of your current DNS settings, including records like A (IPv4), AAAA (IPv6), CNAME, MX (mail exchange), TXT (for SPF, DKIM, etc.), and any other relevant records.
+
+**Steps to Transfer Domain to Route 53:**
+
+1.Initiate Domain Transfer in AWS Route 53:
+
+Sign in to the AWS Management Console.
+
+Open the Route 53 console.
+
+Choose "Registered domains" from the navigation pane.
+
+Click "Transfer domain" and follow the instructions to begin the domain transfer process.
+
+
+2.Prepare for DNS Configuration:
+
+During the transfer process, AWS will provide you with Route 53 name servers.
+
+Note down these name servers as you'll need to update your domain's DNS settings to point to these Route 53 name servers later.
+
+
+3.Complete Transfer Authorization:
+
+You will need to provide the necessary authorization codes (also known as EPP codes) during the transfer process to confirm ownership of the domain.
+
+Follow the instructions provided by AWS to enter the authorization code and complete the domain transfer.
+
+
+4.Update DNS Settings:
+
+Once the domain transfer is initiated and nearing completion, update the DNS settings of your domain with the Route 53 name servers you obtained earlier.
+
+This can usually be done through the control panel of your current domain registrar where you manage DNS settings.
+
+
+5.Verify DNS Propagation:
+
+After updating the DNS settings, monitor the propagation of these changes across the internet. DNS propagation can take up to 48 hours, during which time some users might still be directed to the old DNS servers.
+
+
+
+
+
+
+
+
