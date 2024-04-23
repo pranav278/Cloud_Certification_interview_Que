@@ -200,10 +200,108 @@ This can usually be done through the control panel of your current domain regist
 
 After updating the DNS settings, monitor the propagation of these changes across the internet. DNS propagation can take up to 48 hours, during which time some users might still be directed to the old DNS servers.
 
+**11) How is Elastic Beanstalk is different than AWS OpsWorks?**
 
+**ANS:** AWS Elastic Beanstalk is a application management Platform where as AWS OpsWork is an Configuration management platform.
+Beanstalk is an easy to use service which is used for deploying and scaling web applications.
 
+**12) What happens if application stops responding to requests in beanstalk?**
 
+**ANS:** AWS Beanstalk applications have a system in place for avoiding failures in the underlying infrastructure. If an amazon ec2 instances fails for any reason beanstalk will use auto scaling to automatically launch the new instance.
 
+**13) An organizationwants to deploy a two-tier web applications on AWS. The application requires complex query processing amd table joins. However, the company has limited resources and requires high availability. Which is the best configuration that company can opt for based on the requirements?**
 
+**ANS:** For deploying a two-tier web application on AWS that requires complex query processing and table joins while ensuring high availability with limited resources, the best configuration would involve using AWS services like Amazon RDS (Relational Database Service) and Elastic Beanstalk.
 
+1.Use Amazon RDS to host your database. RDS is a managed database service that handles the heavy lifting of database management.Optimize your database schema and queries to efficiently handle complex joins and queries. Use indexing and proper database design to enhance performance.
 
+2.Use AWS Elastic Beanstalk to deploy and manage your web application.
+Configure Elastic Beanstalk to use an auto-scaling configuration to handle varying levels of traffic efficiently.
+
+3.Choose appropriate instance types for both RDS and Elastic Beanstalk based on your application's resource requirements and budget constraints.
+
+4.Implement security best practices by configuring security groups and access controls for both RDS and Elastic Beanstalk.
+
+**14) How can you safeguard EC2 instance running on a VPC?**
+
+**ANS:** 1.Use Security Groups:
+
+Configure security groups to control inbound and outbound traffic to your EC2 instance. Only allow necessary protocols, ports, and IP ranges.
+
+2.Implement Network ACLs:
+
+Set up network ACLs at the subnet level to filter traffic based on IP addresses, ports, and protocols.
+
+3.Enable VPC Flow Logs:
+
+Enable VPC Flow Logs to capture information about network traffic going to and from your EC2 instance for monitoring and analysis.
+
+4.Use Private Subnets:
+
+Place EC2 instances in private subnets if they don’t need direct internet access. Use a NAT gateway or instance for outbound internet access.
+
+5.Use IAM Roles:
+Attach IAM roles to EC2 instances to grant permissions securely without exposing AWS credentials directly on the instance.
+
+6.Implement DDoS Protection:
+Use AWS Shield for DDoS protection and AWS WAF (Web Application Firewall) to filter and protect against web-based attacks.
+
+**15) What automation tools can you use to spinup servers?**
+
+**ANS:** 1.AWS CloudFormation
+
+2.AWS Elastic Beanstalk
+
+3.AWS OpsWorks
+
+4.AWS Systems Manager (SSM)
+
+5.HashiCorp Terraform
+
+6.Ansible
+
+7.Pulumi
+
+**16) What are the important features of classic load balancer in EC2?**
+
+**ANS:** 1. High availability
+
+2.Health Checks
+
+3.SSL Termination
+
+4.Cross-Zone Load Balancing
+
+5.Access Logs
+
+6.Security Features
+
+7.IPv6 Support
+
+**17) What is AMI?**
+
+**ANS:** AMI stands for Amazon Machine Image. It is a pre-configured template that contains the necessary information to launch an instance (virtual server) on Amazon Elastic Compute Cloud (EC2). An AMI includes the operating system, application server, and any additional software required to run an instance.
+
+**18) What is the total number of buckets that can be created in AWS by default?**
+
+**ANS:** 100 buckets can be created in each of the AWS Account. If additional buckets are required increase the bucket limit by submitting a service limit increase.
+
+**19) Explain Stopping, Starting and Terminating an Amazon EC2 instance.**
+
+**ANS:** Stopping an instance in AWS means shutting down the virtual server (EC2 instance) but keeping its associated resources intact, such as its EBS volumes (if they are not deleted upon termination).When you stop an instance, it moves from the "running" state to the "stopped" state. The instance's data on the EBS volumes persists.
+
+Starting a stopped EC2 instance resumes its operation.
+The instance's state changes from "stopped" to "running".
+The instance retains its configuration, including instance ID, private IP address, and Elastic IP address (if associated).
+
+Terminating an instance means permanently deleting the virtual server (EC2 instance) and all associated resources, including any attached EBS volumes (depending on your settings).When you terminate an instance, it is completely removed from your AWS account. All data stored on the instance's EBS volumes (if not backed up or configured otherwise) is deleted.
+
+**20) How can S3 be cast-off with EC2 instance?**
+
+**ANS:** 
+Amazon S3 (Simple Storage Service) can be used with Amazon EC2 (Elastic Compute Cloud) instances to store and manage data.
+
+Use Amazon S3 as a centralized storage solution for your EC2 instances.
+Store application data, logs, backups, and other files in S3 buckets.
+This offloads storage management from EC2 instances and provides durable and scalable object storage. 
+    
